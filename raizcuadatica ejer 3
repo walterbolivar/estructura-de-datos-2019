@@ -1,0 +1,46 @@
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+float positivo(float a, float b, float c, float y)
+{ float x,y;
+  if(y>0)
+   {
+	   x=(-b+y)/(2*a);
+  
+    }
+     
+   return(x);
+}
+
+float negativo(float a,float b,float c,float y)
+ { float x2,y;
+      if(y>0)
+	  { x2=(-b-y)/(2*a);
+	  }
+	   return (x2);
+}
+
+void main()
+{ float a,b,c,res1,res2;
+     cout<<"ingrese el valor de a";
+	 cin>>a;
+	 cout<<"ingrese el valor de b";
+	 cin>>b;
+	 cout<<"ingrese el valor de c";
+	 cin>>c;
+
+	 y=powf((b^2-4*a*c),1/2);
+
+		 res1=positivo(a,b,c,y);
+	     res2=negativo(a,b,c,y);
+
+		 cout<<"el primer resultado es"<<res1<<end;
+		 cout<<"el segundo resultado es"<<res2<<end;
+
+		 getch();
+
+}
