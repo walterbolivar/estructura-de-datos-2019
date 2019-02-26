@@ -1,0 +1,15 @@
+void concatenar (int A[], int B[], int N, int M, int V[])
+{
+    int T, j=0;
+    T=N+M;
+    for (int i=0; i<N; i++)
+        { V[i] = A[i];
+        }
+    for (int i=N; i<T; i++)
+        { V[i] = B[j];
+           j++;
+        }
+    for (int i=0; i<T; i++)
+        { cout<<V[i]<<“ , “;
+        }
+}
