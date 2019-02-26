@@ -1,0 +1,148 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+//Prototipos
+
+void cargar (int a[], int tam);
+void mostrar (int a[], int tam);
+void Burbuja (int a[],int tam);
+int BusquedaLineal(int a[],int b,int tam);
+int Busquedabinaria(int a[],int b,int tam);
+void mezclar (int a[],int b[],int n, int m, int c[]);
+void concatenar (int a[],int b[],int n, int m, int c[]);
+void emparejar (int a[],int b[],int n);
+void eliminar (int a[],int &tam);
+
+void main ()
+{
+	int vec[MAX],prom,k;  //Declarando al vector vec que tiene un tamaña MAX
+	int tam,n,pos,opcion;
+	do
+	{
+		cout<<"Ingrese el numero de elementos del vector: ";
+		cin>>n;
+	}while ((0>=n)||(n>MAX));
+	cargar (vec,n); // Llamada a la función el vector solo se coloca el nombre
+	do {
+		//Desplegar las opciones
+		cout<<"\t\t Menu \n";
+		cout<<"\t\t ==== \n";
+		cout<<"1. Mostrar\n";
+		cout<<"2. Ordenar\n";
+		cout<<"3. Busqueda lineal \n";
+		cout<<"4. Eliminar  \n";
+		cout<<"5. Mezclar\n";
+		cout<<"6. Emparejar  \n";
+		cout<<"7. Concatenar  \n";
+		cout<<"8. Busqueda binaria  \n";
+		cout<<"0. Salir\n";
+		cout<<"Opcion: ";
+		cin>>opcion;
+		// Condicional multiple
+		switch (opcion)
+		{
+		case 1: mostrar(vec,n);
+				break;
+		case 2: Burbuja(vec,n);
+				mostrar(vec,n);
+				break;
+		case 3: cout<<"Ingrese el elemento a buscar: ";
+				cin>>k;
+				pos=BusquedaLineal(vec,k,n);
+				if (pos==-1)
+					cout << "No existe el elemento";
+				else
+					cout << "El dato se encuentra en la posicion: "<<pos;
+				break;
+		case 4: cout<<"Eliminar"<<endl;
+				mostrar (vec,n);   // Llamada a mostrar
+			    break;
+		case 5: cout<<"Mezclar\n";
+				mostrar (vec,n);   // Llamada a mostrar
+				break;
+		case 6: cout<<"Emparejar  \n";
+				mostrar (vec,n);   // Llamada a mostrar
+			    break;
+		case 7: cout <<"Concatenar  \n";
+				mostrar (vec,n);   // Llamada a mostrar
+			    break;
+		case 8: cout<<"Busqueda binaria  \n";
+			// Busqueda de un elemento en el vector
+				cout<<endl<<"Ingrese el elemento a buscar: ";
+				cin>>k;
+				pos=Busquedabinaria(vec,k,n); // Llamada a la busqueda lineal
+				if (pos==-1)
+					cout<<"No se encuentra el dato";
+				else
+					cout<<"El elemento esta en la posicion "<<pos;
+			    break;
+		case 0: cout<<"Saliendo del Menu";
+			    break;
+		default: cout <<"ERROR de opcion";
+			    break;
+		}
+		getch();
+		system("cls");
+	}while (opcion!=0);
+	getch();
+}
+
+void cargar (int a[], int tam)
+{
+	for(int i=0;i<tam;i++)
+	{
+		cout<<"a["<<i<<"]= ";
+		cin>> a[i];
+	}
+}
+
+void mostrar (int a[], int tam)
+{
+	cout << endl<<"Vector clasificado ascendentemente"<<endl;
+	for(int i=0;i<tam;i++)
+		cout<<"a["<<i<<"]= "<<a[i]<<endl;
+}
+
+void Burbuja (int a[], int tam)
+{
+	int aux=0;
+	for(int i=0;i<tam-1;i++)
+	{ 
+		for(int j=i+1;j<tam;j++)
+			{ 
+				if(a[j]<a[i])
+				{ aux=a[j];
+				  a[j]=a[i];
+				  a[i]=aux;
+				}
+		}
+}
+}
+int BusquedaLineal (int a[],int b, int tam)
+{
+	return 0;
+}
+int Busquedabinaria(int a[],int b,int tam)
+{
+	return 0;
+}
+
+void mezclar (int a[],int b[],int n, int m, int c[])
+{
+}
+
+void concatenar (int a[],int b[],int n, int m, int c[])
+{
+}
+
+void emparejar (int a[],int b[],int n)
+{
+}
+
+void eliminar (int a[],int &tam)
+{
+}
