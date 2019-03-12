@@ -1,0 +1,18 @@
+#pragma once
+#
+class vector
+{
+
+private: 
+	int vec[20];
+	int n;
+
+public:
+	vector(int _n);
+	~vector(void);
+	void cargarVector();
+	void mostrarVector();
+    void ordenarVector();
+	void ordenarmayormenor();
+};
+
