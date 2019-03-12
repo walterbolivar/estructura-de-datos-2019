@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "vector.h"
+
+#define MAX 10
+using namespace std;
+
+void main(){
+
+	int vec[MAX], n,m, op;
+	do {
+		cout<<"Ingrese el tamanio del vector : ";
+		cin>>n;
+
+	} while ((n>MAX) || (n<=0));
+	    vector vector1(n);
+
+	do{
+		cout<<"-----       M E N U        -----"<<endl;
+		cout<<"|1.- Cargar Vector.            |"<<endl;
+		cout<<"|2.- Mostrar Vector.           |"<<endl;
+		cout<<"|3.- Ordenar Vector.           |"<<endl;
+		cout<<"|4.- Ordenar mayo a menor.     |"<<endl;
+		cout<<"|0.- Salir                     |"<<endl;
+		cout<<"--------------------------------"<<endl;
+		cout<<" Elija una opcion"<<endl;
+		cin>>op;
+		switch(op){
+		case 1:
+			vector1.cargarVector();
