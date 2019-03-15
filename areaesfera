@@ -1,0 +1,55 @@
+#pragma once
+
+class esfera
+{
+private:
+	float r;
+
+public:
+	esfera(void);
+	~esfera(void);
+	float areaesfera();
+
+};
+
+
+#include "StdAfx.h"
+#include "esfera.h"
+#include <conio.h>
+
+
+esfera::esfera(void)
+{
+ r=5;
+}
+
+
+esfera::~esfera(void)
+{
+}
+
+float esfera::areaesfera()
+{
+	float area;
+
+	area=4*3.14*r*r;
+	return area;
+}	
+
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include "esfera.h"
+using namespace std;
+
+ void main()
+{
+	esfera e1;
+	cout<<"el area es:"<<e1.areaesfera();
+
+
+}
+
+
+
+
