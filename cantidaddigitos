@@ -1,0 +1,58 @@
+#pragma once
+class digitos
+{
+private:
+	int numero;
+
+public:
+	digitos(void);
+	~digitos(void);
+	int sumadigitos();
+};
+
+
+#include "StdAfx.h"
+#include "digitos.h"
+
+
+digitos::digitos(void)
+{
+	numero=325;
+}
+
+
+digitos::~digitos(void)
+{
+}
+
+int digitos::sumadigitos()
+{
+  int c=0,a;
+  while(a>0){
+	  numero=numero/10;
+	  c++;
+  }
+  return (c);
+
+}
+	
+
+
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+#include "digitos.h"
+
+
+using namespace std;
+
+void main()
+{
+	digitos cantidad1;
+
+cout<<"la cantidad de digitos es:"<< cantidad1.sumadigitos();
+}
+
+
+
+
