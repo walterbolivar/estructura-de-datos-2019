@@ -1,0 +1,787 @@
+Practicando pal exaen 
+
+1.clase sar dígitos 
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+
+using namespace std;
+
+class numero{
+private:
+ int valor;
+
+//funciones privadas
+
+ public:
+  numero() {
+   valor=0;   
+ }
+
+ void setNum(int n)
+ { valor=n; } 
+ 
+ int getNum()
+ { return valor; }
+
+ int sumarDigitos();
+
+}; //fin clase
+
+int numero::sumarDigitos(){
+int n=valor; int s=0;
+while(n>0){
+  int d=n % 10;
+  s=s + d;
+  n=n / 10;
+}
+return s;
+}
+
+
+void main()
+{
+	int x,s;
+	numero n1;
+	cout<<"Numero:";
+	cin>>x;
+	n1.setNum(x);
+	cout<<n1.getNum()<<endl;
+	s=n1.sumarDigitos();
+	cout<<"Suma:"<<s;
+	getche();
+}
+
+
+2. clases factorial.
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+
+using namespace std;
+
+class numero{
+private:
+ int valor;
+
+
+ public:
+  numero() {
+   valor=0;   
+ }
+
+ void setNum(int n)
+ { valor=n; } 
+ 
+ int getNum()
+ { return valor; }
+
+int factorial();
+
+}; //fin clase
+
+int numero:: factorial(){
+ int f=1,i=1;
+
+   while(i<=valor)
+
+   { f=f*i;
+     i=i+1;
+	 
+   }
+
+
+return(f);
+}
+
+
+
+void main()
+{
+	int x;
+	numero n1;
+	cout<<"digite un nummero:";
+	cin>>x;
+	n1.setNum(x);
+	cout<<n1.getNum()<<endl;
+	int f=n1.factorial();
+	cout<<f;
+	getch ();
+
+}
+
+
+3.recursividad en clases suma de dígitos
+
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+
+using namespace std;
+
+class numero{
+private:
+ int valor;
+
+//funciones privadas
+int sumarDigitosR(int n) {
+  int x;
+  if ( n < 10 ) 
+     return n;  
+  else 
+  {
+     x = sumarDigitosR(n/10); //HI, hace todo como n-1         
+     return x + (n % 10);  //suma el ultimo digito mas los anteriores	 
+  }
+}
+ public:
+  numero() {
+   valor=0;   
+ }
+
+ void setNum(int n)
+ { valor=n; } 
+ 
+ int getNum()
+ { return valor; }
+
+int sumarDigitosR() {
+	return sumarDigitosR(valor);
+}
+
+
+}; //fin clase
+
+
+void main()
+{
+	int x,s;
+	numero n1;
+	cout<<"Numero:";
+	cin>>x;
+	n1.setNum(x);
+	cout<<n1.getNum()<<endl;
+	s=n1.sumarDigitosR();
+	cout<<"Suma:"<<s;
+	getche();
+}
+
+
+
+MultiplicRDIGIOTOS.
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+
+using namespace std;
+
+class numero{
+private:
+ int valor;
+int multiplicardigitos(int n) {
+  int x;
+  if ( n < 10 ) 
+     return n;  
+  else 
+  {
+
+     x = multiplicardigitos(n/10);     
+     return x * (n % 10); 	 
+  }
+}
+ public:
+  numero() {
+   valor=0;   
+ }
+
+ void setNum(int n)
+ { valor=n; } 
+ 
+ int getNum()
+ { return valor; }
+
+int multiplicardigitos() {
+	return multiplicardigitos(valor);
+}
+
+
+}; //fin clase
+
+
+void main()
+{
+	int x,s;
+	numero n1;
+	cout<<"Numero:";
+	cin>>x;
+	n1.setNum(x);
+	cout<<n1.getNum()<<endl;
+	s=n1.multiplicardigitos();
+	cout<<"la multiplicacion es:"<<s;
+	getche();
+}
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+float factorial(int n)
+{
+	if(n==0)
+		return 1;
+	else
+	{
+		float x=factorial(n-1);
+		return x*n;
+	}
+	
+	}
+
+float serie2 (int n)
+
+	{
+	if(n==0)
+		return 0;
+	else
+	{
+		float s=serie2(n-1);
+		return s+ factorial(n)/(n*n);
+	}
+	
+	}
+
+void main()
+{
+	int n;
+	float s;
+	cout<<"ingrese n:";
+	cin>>n;
+	s=serie2(n);
+	cout<<"la serie es:"<<s;
+
+	getch();
+
+
+
+}
+
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+
+  // mostrar los n primeros numeros naturales(empenzando desde 1)
+
+void mostrarnaturales(int n)
+{
+	if(n==1)
+		cout<<"1";
+	else {
+
+		mostrarnaturales(n-1);
+		cout<<n<<"";
+	}
+}
+
+
+void main()
+{
+	int n;
+	float s;
+	cout<<"ingrese n:";
+	cin>>n;
+	mostrarnaturales(n);
+
+	getch();
+
+}
+
+
+
+
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+
+  // mostrar los n primeros numeros naturales(invertido)
+
+void mostrarinvertido(int n)
+{
+	if(n==1)
+		cout<<"1";
+	else {
+		cout<<n<<" ";
+		mostrarinvertido(n-1);
+
+	}
+}
+
+
+
+void main()
+{
+	int n;
+	float s;
+	cout<<"ingrese n:";
+	cin>>n;
+	mostrarinvertido(n);
+
+	getch();
+
+}
+
+
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+
+// suma de vectores
+
+void leervector(int v[],int n)
+{
+	for(int i=0; i<n; i++)
+		cin>>v[i];
+}
+
+
+void mostrarvector(int v[],int n)
+{
+	for(int i=0; i<n; i++)
+		cout<<v[i]<<" ";
+	cout<<endl;
+}
+
+
+int suma(int v[], int n)
+{
+	if(n==0)
+		return 0;
+	else
+		if(n==1)
+			return v[0];
+		else{
+		
+		int s=suma(v,n-1);
+		return s+v[n-1];
+
+		
+		}
+
+}
+
+void main()
+{
+	int v[50]; int n;
+
+	cout<<"ingrese dimension:"; cin>>n;
+
+leervector(v, n);
+mostrarvector(v, n);
+cout<<suma(v,n);
+getch();
+
+}
+  
+
+
+// SUMAVECTORES.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+
+// suma de vectores
+
+void leervector(int v[],int n)
+{
+	for(int i=0; i<n; i++)
+		cin>>v[i];
+}
+
+
+void mostrarvector(int v[],int n)
+{
+	for(int i=0; i<n; i++)
+		cout<<v[i]<<" ";
+	cout<<endl;
+}
+
+
+int suma(int v[], int n)
+{
+	if(n==0)
+		return 0;
+	else
+		if(n==1)
+			return v[0];
+		else{
+		
+		int s=suma(v,n-1);
+		return s+v[n-1];
+
+		
+		}
+
+}
+
+
+int sumapar(int v[], int n)
+{
+	if(n==0)
+		return 0;
+	else
+		if(n==1)
+		{
+			if(v[0]%2==0)
+				return v[0];
+			else
+				return 0;
+		}
+		else{
+		
+		int s=sumapar(v,n-1);
+		if(v[n-1]%2==0)
+		return s+v[n-1];
+		else 
+			return s;
+
+		
+		}
+
+}
+
+
+
+
+void main()
+{
+	int v[50]; int n;
+
+	cout<<"ingrese dimension:"; cin>>n;
+
+leervector(v, n);
+mostrarvector(v, n);
+cout<<sumapar(v,n);
+getch();
+
+}
+  
+1.	Invertir numero con clases
+Numero.h
+
+#include "stdafx.h"
+
+class Numero
+{
+ private:
+  int n;
+
+ public:
+	 Numero()
+	 {
+		 n=1;
+	 }
+
+	 void setElem(int x){
+		 n=x;
+	 }
+	 int getElem(){
+		 return n;
+	 }
+	
+	 void cargar();
+	 void mostrar();
+	 void invertir();
+	 void eliminar();
+};
+
+
+Numero.cpp
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Numero.h"
+
+
+using namespace std;
+
+void Numero::cargar(){
+
+	cout<<"introdcir el numero"<<endl;
+	cin>>n;
+}
+
+void Numero::mostrar(){
+	cout<<n<<endl;
+}
+
+void Numero::invertir(){
+
+	int d,cont=0 ;
+	   while(n>0){
+	   
+		    d=n%10;
+			cont=cont*10+d;
+			n=n/10;
+	   }
+
+	   cout<<"el numero inverido es:"<<cont<<endl;
+
+
+}
+
+
+void main()
+{
+	Numero p1;
+
+		p1.cargar();
+		p1.invertir();
+		p1.mostrar();
+
+		getch();
+}
+
+
+2.	Eliminar digito de derecha a izquierda
+Numero.h
+#pragma once
+#include "stdafx.h"
+
+class Numero
+{
+private:
+	int vec[10], n;
+
+public:
+	Numero(void); // constructor
+	~Numero(void); //destructor
+	void cargarVector(int vec[], int n); //metodos
+	void mostrarVector(int vec[], int n);
+	void eliminar_digito_derecha(int vec[], int n);
+};
+
+Numero.cpp
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "Numero.h"  //Declarar el header de la clase
+
+#define MAX 10
+
+using namespace std;
+Numero::Numero(void)
+{
+	vec[10]=0;
+	n=0;
+}
+
+Numero::~Numero(void)
+{
+}
+
+void Numero::cargarVector(int vec[], int n)
+{
+	for(int i=0;i<n;i++){
+		cout<<"vec["<<i<<"] =" ;
+		cin>>vec[i];
+	}
+}
+
+void Numero::mostrarVector(int vec[], int n)
+{
+	n=n-1;
+	for(int i=0;i<n;i++)
+	{
+		cout<<vec[i]<<" ";
+	}
+	cout<<endl;
+}
+
+void Numero::eliminar_digito_derecha(int vec[], int n)
+{
+	int pos;
+	cout<<"ingrese la posición a eliminar de derecha a izquierda:";
+	cin>>pos;
+	int eliminado=vec[pos];
+    for(int i=0; i<n; i++)
+	{
+		if(i==n-pos)
+		{
+			while (i<n-1)
+			{
+				vec[i]=vec[i+1];
+				i++;
+			}break;
+		}
+	}
+	/*n=n-1;
+
+	for(int i=0;i<n;i++)
+	{
+		cout<<vec[i]<<" ";
+	}
+	cout<<endl;
+	*/
+}
+void main()
+{
+	int vec[MAX], n;
+	Numero vector1;  // Declarando el objeto vector1 de la clase vector
+	do {
+		cout<<"Ingrese el tamaño del vector : ";
+		cin>>n;
+	} while ((n>MAX) || (n<=0));
+			vector1.cargarVector(vec, n);  //Llamar al método
+			vector1.eliminar_digito_derecha(vec, n);
+			vector1.mostrarVector(vec, n);
+	getch();
+}
+
+3.	Mostrar el mayor y menor de una cantidad de dígitos
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+class NumeroM
+{
+private:
+	int n;
+public:
+	NumeroM()
+	{ n=0; }
+	void setnum (int x)
+	{
+		n=x;
+	}
+	
+	int getnum ()
+	{
+		return n;
+	}
+	void cargar();
+	void mostrar();
+	void MayorMenor();
+	
+};
+
+void NumeroM::cargar()
+{
+ cout<<" ingrese el número:"<<endl;
+ cin>>n;
+}
+void NumeroM::mostrar()
+{
+	cout<<n;
+}
+
+void NumeroM::MayorMenor()
+{
+	int R,K;
+	double p=10;
+	R=pow(p,n);
+	K=(pow(p,n+1)-1);
+
+	cout<<"el número mayor es"<<K<<endl;
+	cout<<"el número menor es:"<<R<<endl;
+}
+
+void main()
+{
+	NumeroM p1;
+		p1.cargar();
+		p1.MayorMenor();
+		p1.mostrar();
+		getch();
+}
+
+
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+
+using namespace std;
+
+class fraccion{
+private:
+ int num;
+ int den;
+
+public:
+ fraccion() {
+   num=1;
+   den=1;
+ }
+
+ void setNum(int n)
+ { num=n; }
+ 
+ void setDen(int d)
+ { den=d; }
+
+ int getNum()
+ { return num; }
+
+ int getDen()
+ { return den; }
+
+void leer()
+{
+  int a,b;
+  
+  cout<<"Num:"; cin>>a; 
+  cout<<"Den:"; cin>>b;
+  num=a;
+  den=b;
+}
+
+void mostrar()
+{
+  cout<<num<<"/"<<den<<endl;
+}
+
+ void simplificar(){
+ int c=2;
+  while(c<=num && c<=den)
+  {
+	 if(num % c==0 && den % c==0){
+	   num=num / c;
+	   den=den / c;
+	 }
+	 else
+		c++;
+  }
+ }
+
+
+}; //fin clase
+
+void main()
+{
+	fraccion f1;
+	f1.leer();
+	f1.mostrar();
+	f1.simplificar();
+	f1.mostrar();
+	
+	getche();
+}
