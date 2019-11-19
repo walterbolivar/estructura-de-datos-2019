@@ -1,0 +1,182 @@
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+#include "Fecha.h"
+#include <stdio.h>
+
+using namespace std;
+
+class Empleado
+{
+private:
+	int codigo;
+	char nombre[40];
+	char paterno[30];
+	char materno[30];
+	Fecha fechaingreso;
+	Fecha fechaNacimiento;
+public:
+	void setCodigo(int c)
+		{codigo=c;}
+
+	int getCodigo()
+	{return codigo;}
+
+	void setNombre(char *no)
+	{nombre[0]='\0';
+	strcat(nombre,no);
+	}
+	char*getNombre()
+	{return nombre;}
+
+	void setPaterno(char*pa)
+	{paterno[0]='\0';
+	strcat(paterno,pa);}
+	char*getPaterno()
+	{return paterno;}
+	void setMaterno(char*ma)
+	{materno[0]='\0';
+	strcat(materno,ma);}
+	char*getMaterno()
+	{return materno;}
+	
+	void setFechaIng(Fecha fi)
+	//{fechaingreso=fi;}
+	{fechaingreso=fi;}
+	Fecha getFechaIng(){
+	return fechaingreso;}
+
+	void setFechaNac(Fecha fn)
+	{fechaNacimiento=fn;}
+
+	Fecha getFechaNac(){
+	return fechaNacimiento;
+	}
+	void leerEmpleado();
+	void mostrarEmpleado();
+
+
+
+};
+
+
+void Empleado::leerEmpleado(){
+	int cod;
+	char nom[40];
+	char pat[30];
+	char mat[30];
+	Fecha fi;
+	Fecha fn;
+
+	printf("codigo");
+    scanf("%i",&cod);
+    setCodigo(cod);
+
+	printf("nombre:" );
+	scanf("%s",&nom);
+	setNombre(nom);
+
+	printf("paterno:");
+	scanf("%s",&pat);
+	setPaterno(pat);
+
+	printf("materno:");
+	scanf("%s",&mat);
+	setMaterno(mat);
+
+	
+
+	cout<<"fecha ingreso:";
+	fechaingreso.leerFecha();
+	cout<<"fecha nacimiento:"<<endl;
+	fechaNacimiento.leerFecha();
+}
+
+
+void Empleado::mostrarEmpleado(){
+	Fecha fi;
+	printf("codigo");
+	printf("%i\n",getCodigo());
+	printf("Nombre:");
+	printf("%s\n",getNombre());
+	printf("Paterno:");
+	printf("%s\n", getPaterno());
+	printf("Materno:");
+	printf("%s\n",getMaterno());
+	cout<<"fecha ingreso:";
+	fechaingreso.mostrarFecha();
+	cout<<"Fecha nacimiento:";
+	fechaNacimiento.mostrarFecha();
+}
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+
+using namespace std;
+
+const int diaMes[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+class Fecha{
+private:
+ int dia;
+ int mes;
+ int anho;
+
+public:
+ Fecha() {
+   dia=mes=anho=0;   
+ }
+
+ void setDia(int d)
+ { dia=d; }
+ 
+ int getDia()
+ { return dia; }
+
+ void setMes(int m)
+ { mes=m; }
+ 
+ int getMes()
+ { return mes; }
+
+ void setAnho(int a)
+ { anho=a; }
+ 
+ int getAnho()
+ { return anho; }
+
+ void leerFecha();
+ void mostrarFecha();
+}; //fin clase
+
+void Fecha::leerFecha(){
+
+	cout<<"Dia:";cin>>dia;
+	cout<<"Mes:";cin>>mes;
+	cout<<"Anho:";cin>>anho;
+}
+
+void Fecha::mostrarFecha(){
+	cout<<dia<<"/"<<mes<<"/"<<anho;
+
+}
+// pregunta3.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "Empleado.h"
+#include "iostream"
+#include "conio.h"
+using namespace std;
+
+
+void main(){
+
+
+	Empleado E1;
+	E1.leerEmpleado();
+	E1.mostrarEmpleado();
+
+
+	get();
+
+}
